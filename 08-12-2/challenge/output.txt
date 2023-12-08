@@ -1,0 +1,7 @@
+CN: 0, BBA
+ CN: 1, BLA
+ CN: 2, AAA
+ CN: 3, NFA
+ CN: 4, DRA
+ CN: 5, PSA
+ 9606140307013
