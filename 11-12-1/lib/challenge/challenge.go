@@ -1,11 +1,9 @@
 package challenge
 
 import (
-	"fmt"
 	"math"
 	"strconv"
 	"strings"
-	"sync"
 )
 
 const ExpandFactor = 1_000_000
@@ -51,45 +49,32 @@ func Challenge(input string) string {
 		}
 	}
 
-	expandedLines := []string{}
+	universe := Universe{}
 
+	curY := 0
 	for y := 0; y < maxY; y++ {
-		thisLine := ""
+		curX := 0
 		for x := 0; x < maxX; x++ {
 			if !universeInX[x] {
-				thisLine += strings.Repeat(".", ExpandFactor)
+				curX += ExpandFactor
 			} else {
-				thisLine += string(lines[y][x])
+				if lines[y][x] == '#' {
+					galaxy := Galaxy{
+						Position: Coordinate{curX, curY},
+					}
+					universe = append(universe, &galaxy)
+				}
+				curX++
 			}
 		}
 		if !universeInY[y] {
-			for i := 0; i < ExpandFactor; i++ {
-				expandedLines = append(expandedLines, thisLine)
-			}
+			curY += ExpandFactor
 		} else {
-			expandedLines = append(expandedLines, thisLine)
+			curY++
 		}
 	}
 
-	wg := &sync.WaitGroup{}
-	results := make(chan *Galaxy)
-
-	fmt.Printf("Expanded Lines: %d\n", len(expandedLines))
-
-	for y, l := range expandedLines {
-		wg.Add(1)
-		ls := lineScan{l, y}
-		go scanLine(wg, ls, results)
-	}
-
-	go monitor(wg, results)
-
 	tally := 0
-	universe := Universe{}
-
-	for g := range results {
-		universe = append(universe, g)
-	}
 
 	for i := 0; i < len(universe); i++ {
 		for j := i + 1; j < len(universe); j++ {
@@ -98,27 +83,4 @@ func Challenge(input string) string {
 	}
 
 	return strconv.Itoa(tally)
-}
-
-func monitor(wg *sync.WaitGroup, results chan *Galaxy) {
-	wg.Wait()
-	close(results)
-}
-
-type lineScan struct {
-	l string
-	y int
-}
-
-func scanLine(wg *sync.WaitGroup, ls lineScan, results chan *Galaxy) {
-	defer wg.Done()
-	if ls.y%100_000 == 0 {
-		fmt.Printf("Work Line %d\n", ls.y/100_000)
-	}
-	for x, c := range ls.l {
-		if c == '#' {
-			galaxy := Galaxy{Position: Coordinate{x, ls.y}}
-			results <- &galaxy
-		}
-	}
 }
