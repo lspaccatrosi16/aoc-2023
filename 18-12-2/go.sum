@@ -1,0 +1,10 @@
+github.com/lspaccatrosi16/go-cli-tools v0.1.5 h1:q7YrHEvJ+rK9csfOTQK4DZapg2fOJhuIS9oRtscwTvQ=
+github.com/lspaccatrosi16/go-cli-tools v0.1.5/go.mod h1:iyhfknfKS9U80OXFUiPjJCBj7YK086ZgoLJqZoN5AaE=
+github.com/lspaccatrosi16/go-libs v0.1.3-0.20231218142102-0fd41a9efdc2 h1:9zL+LJHNpjSyLtdHnyQJQa4+VmRfLLI+SVP7pHQLcAk=
+github.com/lspaccatrosi16/go-libs v0.1.3-0.20231218142102-0fd41a9efdc2/go.mod h1:lrZCTsA+8TBww9p1VkdwtgDs36wCoS4hW8Ybx2iCKEY=
+github.com/lspaccatrosi16/go-libs v0.1.3-0.20231218205426-638ab99dfe4e h1:mtZzeY6KxjL3Q4vZX72OZJ8mFsG6lN6BqTlT66LDdE8=
+github.com/lspaccatrosi16/go-libs v0.1.3-0.20231218205426-638ab99dfe4e/go.mod h1:lrZCTsA+8TBww9p1VkdwtgDs36wCoS4hW8Ybx2iCKEY=
+github.com/lspaccatrosi16/go-libs v0.1.3-0.20231218211015-208424d19a5e h1:b342lYnq2G05s+IbTzX2tzb9fDu3xetPRIBp3YX7s3A=
+github.com/lspaccatrosi16/go-libs v0.1.3-0.20231218211015-208424d19a5e/go.mod h1:lrZCTsA+8TBww9p1VkdwtgDs36wCoS4hW8Ybx2iCKEY=
+github.com/lspaccatrosi16/go-libs v0.1.3 h1:m6cgdPas0/7pkZ4Dkv5ndSJxYROFk5A47YxgLhph32A=
+github.com/lspaccatrosi16/go-libs v0.1.3/go.mod h1:lrZCTsA+8TBww9p1VkdwtgDs36wCoS4hW8Ybx2iCKEY=

@@ -1,0 +1,15 @@
+total 6405262
+{East 461937}
+{South 56407}
+{East 356671}
+{South 863240}
+{East 367720}
+{South 266681}
+{West 577262}
+{North 829975}
+{West 112010}
+{South 829975}
+{West 491645}
+{North 686074}
+{West 5411}
+{North 500254}
